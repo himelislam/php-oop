@@ -23,6 +23,7 @@ class LightSwitch {
 }
 
 $switch = new LightSwitch();
+echo 'Hello';
 $switch->off();
 ?>
 <?php
