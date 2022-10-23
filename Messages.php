@@ -1,58 +1,66 @@
 <?php
 
-class Person{
+use OOP\Person;
+use OOP\Business;
+use OOP\Staff;
 
-    protected $name;
+// require 'vendor/autoload.php';
+// require 'src/Person.php';
+// require 'src/Business.php';
+// require 'src/Staff.php';
 
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
-}
+// class Person{
 
-class Business {
+//     protected $name;
 
-    protected $staff;
+//     public function __construct($name)
+//     {
+//         $this->name = $name;
+//     }
+// }
 
-    public function __construct(Staff $staff)
-    {
-        $this->staff = $staff;
-    }
+// class Business {
 
-    public function hire(Person $person){
-        //add person to the staff collection
+//     protected $staff;
 
-        $this->staff->add($person);
-    }
+//     public function __construct(Staff $staff)
+//     {
+//         $this->staff = $staff;
+//     }
 
-    public function getStaffMembers(){
-        return $this->staff->getMembers();
-    }
-}
+//     public function hire(Person $person){
+//         //add person to the staff collection
 
-class Staff {
-    protected $members = [];
+//         $this->staff->add($person);
+//     }
 
-    public function __construct($members = [])
-    {
-        $this->members = $members;
-    }
+//     public function getStaffMembers(){
+//         return $this->staff->getMembers();
+//     }
+// }
 
-    public function add(Person $person){
-        $this->members[] = $person;
-    }
+// class Staff {
+//     protected $members = [];
 
-    public function getMembers(){
-        return $this->members; 
-    }
+//     public function __construct($members = [])
+//     {
+//         $this->members = $members;
+//     }
 
-}
+//     public function add(Person $person){
+//         $this->members[] = $person;
+//     }
+
+//     public function getMembers(){
+//         return $this->members; 
+//     }
+
+// }
+
 
 $himel = new Person('Himel Islam');
 
-$ceo = new Person('CEO');
-
-$staff = new Staff([$ceo]);
+$staff = new Staff([$himel]);
 
 $Rahimshah = new Business($staff);
 
